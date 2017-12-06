@@ -1,0 +1,12 @@
+[Unit]
+Description=MLab Test Runner Docker Container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run --name mlab_container --volume /var/mlab:/var/mlab -a mlab_test_runner
+ExecStop=/usr/bin/docker stop -t 2 mlab_container 
+
+[Install]
+WantedBy=default.target

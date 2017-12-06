@@ -1,0 +1,6 @@
+[Unit]
+Description=Wait a random period then restart
+
+[Service]
+ExecStart=python /usr/sbin/random-reboot.py
+
